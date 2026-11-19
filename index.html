@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>대학교, 합격했지만 고민입니다!</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="myStyle.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="hd">
+  <div class="art hd-in">
+    <a class="hd-logo" href="#intro" data-go="intro" aria-label="처음으로"><img src="images/header_title.png" alt="합격했지만 고민입니다!"></a>
+    <button class="hb" id="hb" aria-label="메뉴 열기" aria-expanded="false" aria-controls="gnb"><span></span><span></span><span></span></button>
+    <nav id="gnb" aria-label="섹션 이동">
+      <a href="#intro" data-go="intro" class="on">INTRO</a>
+      <a href="#choice" data-go="choice">CHOICE</a>
+      <a href="#result" data-go="ending">ENDING</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ================= INTRO ================= -->
+<section id="intro">
+  <div class="art hero">
+    <div class="halo"></div>
+    <h1 class="title rv"><img src="images/title.png" alt="대학교, 합격했지만 고민입니다!"></h1>
+    <p class="lead rv">지방 국립대 등록금 면제.<br>학비가 0원이 된다면, 대학을 고르는 기준도 달라질까요?</p>
+  </div>
+
+  <div class="art cards">
+    <div class="halo"></div>
+    <button class="pass a" aria-label="A대학 합격증 뒤집어 조건 보기">
+      <span class="flip"><img class="front" src="images/pass-a.png" alt=""><img class="card-back" src="images/a-left.png" alt="A대학교: 인서울 사립대학교, 희망 전공 합격, 자취·기숙사 생활, 등록금·주거비·생활비 부담"></span>
+    </button>
+    <button class="pass b" aria-label="B대학 합격증 뒤집어 조건 보기">
+      <span class="flip"><img class="front" src="images/pass-b.png" alt=""><img class="card-back" src="images/b-right.png" alt="B대학교: 현재 거주지의 국립대학교, 희망 전공 합격, 집에서 통학, 등록금 면제"></span>
+    </button>
+    <p class="cap rv">이 이야기는 거주 지역 국립대의 등록금이 면제되는 상황을 가정합니다.<br><span>(합격증을 클릭해보세요!)</span></p>
+  </div>
+
+  <div class="art comic">
+    <!-- 컷 1 -->
+    <div class="p1-frame rv"><img class="girl sway" src="images/girl-peace.png" alt=""></div>
+    <div class="p1-dots rv"></div>
+    <div class="p1-cap rv">나는 박주혜...<br>경상권 도시에 사는 고3.<br>두 대학에 합격했다....</div>
+    <!-- 컷 2 -->
+    <div class="bub think rv">인지도는 A학교가<br>조금 더 좋은 것 같은데..</div>
+    <i class="tb t1 rv"></i><i class="tb t2 rv"></i><i class="tb t3 rv"></i>
+    <img class="ltr la float" src="images/letter-a.png" alt="A대학교">
+    <img class="ltr lb float d2" src="images/letter-b.png" alt="B대학교">
+    <img class="girl2 bob" src="images/girl-papers.png" alt="">
+    <div class="bub say rv">대학 생활과<br>졸업 후까지 생각하면,<br>어떤 기준으로 골라야하지?</div>
+    <!-- 컷 3 -->
+    <div class="p3 rv">
+      <div class="p3-dots"></div>
+      <img class="family breathe" src="images/family.png" alt="엄마, 주혜, 아빠가 함께 고민하는 모습">
+      <div class="bub p3b">같이<br>고민해주세요..</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHOICE (R1~R5) ================= -->
+<section id="choice">
+  <div class="frame" id="frame">
+    <div class="track" id="track"></div>
+    <div class="overlays" id="overlays"></div>
+    <div class="cursor-tip" id="tip">클릭하면 이 의견을 선택해요</div>
+    <ol class="steps" id="steps" aria-label="진행 단계"></ol>
+    <button class="back" id="backBtn" aria-label="이전 라운드로 돌아가기"><i>↑</i> 이전 라운드</button>
+  </div>
+  <div class="touch-bar" id="touchBar">
+    <button id="tbPick">이 의견 선택하기</button><button id="tbClose" class="ghost">닫기</button>
+  </div>
+  <p class="choice-help" id="help">엄마·아빠 쪽에 마우스를 올려 의견을 듣고, 더 동의하는 쪽을 클릭하세요</p>
+</section>
+
+<!-- ================= RESULT / ENDING (선택 완료 후 공개) ================= -->
+<section id="result" class="result locked"><div class="art res-in">
+  <h2>지금까지의 고민을 종합하면...</h2>
+  <div class="res-box"><ul id="resList"></ul></div>
+  <div class="more" aria-hidden="true"><span>⋮</span><b></b><b></b></div>
+</div></section>
+
+<section id="ending" class="art ending locked"></section>
+
+<footer class="art ft locked" id="footer">
+  <div class="ft-dots"></div>
+  <img class="ft-girl wave" src="images/footer-girl.png" alt="">
+  <p>@2026 HKNU Digital Publishing 2<br>
+  본 웹사이트는 한경대학교 디자인학과 2026년 디지털퍼블리싱2 수업에서 과제의 일환으로 디자인한 것입니다.<br>
+  한경국립대학교 시각미디어디자인과<br>
+  2026910129 문지현 wlgusans187@gmail.com<br>
+  2026910131 박주혜 pjh042054@hknu.ac.kr</p>
+</footer>
+</main>
+
+<!-- 모바일: 엄마·아빠 의견 시트 -->
+<div class="msheet" id="msheet" role="dialog" aria-modal="true" aria-labelledby="msTitle">
+  <div class="ms-card">
+  <div class="ms-head">
+    <p class="ms-who" id="msWho"></p>
+    <button class="ms-x" id="msBack" aria-label="닫기">✕</button>
+  </div>
+  <div class="ms-scroll" id="msScroll">
+    <p class="ms-side" id="msSide"></p>
+    <h3 class="ms-title" id="msTitle"></h3>
+    <div class="ms-body" id="msBody"></div>
+  </div>
+  <div class="ms-act">
+    <button class="ms-pick" id="msPick">이 의견 선택하기</button>
+    <button class="ms-close" id="msClose">닫기</button>
+  </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="tutionFee.js"></script>
+</body>
+</html>
